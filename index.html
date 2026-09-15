@@ -61,16 +61,32 @@
         </a>
 
         <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#home-about">About</a></li>
-            <li><a href="#featured-departments">Services</a></li>
-            <li><a href="#featured-services">Dewscape</a></li>
-            <li><a href="#find-a-doctor">Properties</a></li>
-            <li><a href="#footer">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+  <ul>
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#home-about">About</a></li>
+    <li><a href="#featured-departments">Services</a></li>
+
+    <!-- Projects Dropdown -->
+    <li class="dropdown">
+      <a >
+        <span>Projects</span>
+        <i class="bi bi-chevron-down toggle-dropdown"></i>
+      </a>
+      <ul>
+        <li>
+          <a href="#featured-services" style="font-size: 13px;">
+            Dewscape - Premium Pool Villament Resort
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li><a href="#find-a-doctor">Properties</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
 
       </div>
 
@@ -80,7 +96,7 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section id="hero" class="hero section" style="margin-top: 70px;">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -180,31 +196,13 @@
                 </div>
                 <!-- END OF IMAGE SLIDER -->
 
-                <div class="floating-card appointment-card" style="z-index: 10;">
-                  <div class="card-icon">
-                    <i class="bi bi-calendar-check"></i>
-                  </div>
-                  <div class="card-content">
-                    <h6>Site Visit</h6>
-                    <p>Available Today</p>
-                    <small>Schedule your tour</small>
-                  </div>
-                </div>
+
                 
-                <div class="floating-card rating-card" style="z-index: 10;">
-                  <div class="card-content">
-                    <div class="rating-stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h6>Dewscape</h6>
-                    <small>Boutique Pool Villa Resort</small>
-                  </div>
-                </div>
-              </div>
+<div class="floating-card rating-card" style="z-index: 10;">
+  <div class="card-content text-center">
+    <p class="property-title">Dewscape Private Pool Villa Resort</p>
+  </div>
+</div>
               <div class="background-elements">
                 <div class="element element-1"></div>
                 <div class="element element-2"></div>
@@ -282,123 +280,221 @@
 
     </section><!-- /Home About Section -->
 
-    <!-- Featured Departments Section -->
-    <section id="featured-departments" class="featured-departments section">
+<!-- Featured Departments Section -->
+<section id="featured-departments" class="featured-departments section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Services</h2>
-        <p>A comprehensive range of premium real estate services to enhance your living experience</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Real Estate &amp; Property Solutions</h2>
+    <p>
+      Comprehensive services for buyers, sellers, and property owners.
+      Connect with our experts today.
+    </p>
+  </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row g-5">
+    <div class="row g-5">
 
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="specialty-card">
-              <div class="specialty-content">
-                <div class="specialty-meta">
-                  <span class="specialty-label">Premium Service</span>
-                </div>
-                <h3>Hospitality</h3>
-                <p>Experience unmatched luxury hospitality services designed to elevate your standard of living in our premium properties.</p>
-                <div class="specialty-features">
-                  <span><i class="bi bi-check-circle-fill"></i>Luxury Guest Services</span>
-                  <span><i class="bi bi-check-circle-fill"></i>Premium Concierge</span>
-                </div>
-                <a href="#contact" class="specialty-link">
-                  Enquire Now <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-              <div class="specialty-visual">
-                <img src="assets/img/hospitality.avif" alt="Hospitality" class="img-fluid">
-                <div class="visual-overlay">
-                  <i class="bi bi-concierge-bell"></i>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Specialty Card -->
+<!-- Real Estate -->
+<div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="specialty-card">
+    
+    <div class="specialty-content">
+      <div class="specialty-meta">
+        <span class="specialty-label">Real Estate Solutions</span>
+      </div>
 
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="specialty-card">
-              <div class="specialty-content">
-                <div class="specialty-meta">
-                  <span class="specialty-label">Expert Management</span>
-                </div>
-                <h3>Resort Management</h3>
-                <p>Expert resort operations and seamless facility management to ensure maximum value and comfort for property owners and guests.</p>
-                <div class="specialty-features">
-                  <span><i class="bi bi-check-circle-fill"></i>Complete Operations</span>
-                  <span><i class="bi bi-check-circle-fill"></i>Maintenance Management</span>
-                </div>
-                <a href="#contact" class="specialty-link">
-                  Enquire Now <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-              <div class="specialty-visual">
-                <img src="assets/img/Resort Management .jpg" alt="Resort Management" class="img-fluid">
-                <div class="visual-overlay">
-                  <i class="bi bi-tree"></i>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Specialty Card -->
+      <h3>Real Estate </h3>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="department-highlight">
-              <div class="highlight-icon">
-                <i class="bi bi-house-door"></i>
-              </div>
-              <h4>Renting Services</h4>
-              <p>Find or lease premium properties with our dedicated network, ensuring high yields and quality tenants.</p>
-              <ul class="highlight-list">
-                <li>Premium Villa Rentals</li>
-                <li>Long-term Leasing</li>
-                <li>Tenant Management</li>
-              </ul>
-              <a href="#contact" class="highlight-cta">Learn More</a>
-            </div>
-          </div><!-- End Department Highlight -->
+      <p>
+        Complete real estate assistance for buying, selling, and renting
+        commercial and residential properties with confidence.
+      </p>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="department-highlight">
-              <div class="highlight-icon">
-                <i class="bi bi-bricks"></i>
-              </div>
-              <h4>Construction</h4>
-              <p>High-quality building services focusing on sustainable, modern architecture and flawless execution.</p>
-              <ul class="highlight-list">
-                <li>Custom Villa Construction</li>
-                <li>Sustainable Architecture</li>
-                <li>Project Management</li>
-              </ul>
-              <a href="#contact" class="highlight-cta">Learn More</a>
-            </div>
-          </div><!-- End Department Highlight -->
+      <div class="specialty-features">
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Buying Assistance
+        </span>
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Selling Assistance
+        </span>
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Rental Solutions
+        </span>
+      </div>
 
+      <a href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20your%20real%20estate%20and%20property%20services." class="specialty-link">
+        Enquire Now <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="specialty-visual">
+      <img 
+        src="assets/img/real-estate.png" 
+        alt="Real Estate Solutions - Buying, Selling and Renting" 
+        class="img-fluid"
+      >
+      <div class="visual-overlay">
+        <i class="bi bi-building"></i>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Real Estate Card -->
+
+
+<!-- Property Management -->
+<div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+  <div class="specialty-card">
+
+    <div class="specialty-content">
+      <div class="specialty-meta">
+        <span class="specialty-label">Property Management</span>
+      </div>
+
+      <h3>Property Management</h3>
+
+      <p>
+        Reliable, end-to-end management for resorts, holiday homes,
+        and residential properties, ensuring smooth operations and
+        well-maintained spaces.
+      </p>
+
+      <div class="specialty-features">
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Resorts
+        </span>
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Holiday Homes
+        </span>
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Apartments &amp; Villas
+        </span>
+      </div>
+
+      <a href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20your%20real%20estate%20and%20property%20services." class="specialty-link">
+        Enquire Now <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="specialty-visual">
+      <img 
+        src="assets/img/property-management.png" 
+        alt="Property Management for Resorts, Holiday Homes, Apartments and Villas" 
+        class="img-fluid"
+      >
+      <div class="visual-overlay">
+        <i class="bi bi-house-check"></i>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Property Management Card -->
+
+
+<!-- Construction -->
+<div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+  <div class="specialty-card">
+
+    <div class="specialty-content">
+      <div class="specialty-meta">
+        <span class="specialty-label">Construction</span>
+      </div>
+
+      <h3>Construction</h3>
+
+      <p>
+        Professional construction solutions for commercial and residential
+        buildings, delivering quality, functionality, and lasting value.
+      </p>
+
+      <div class="specialty-features">
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Commercial Buildings
+        </span>
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Apartments
+        </span>
+        <span>
+          <i class="bi bi-check-circle-fill"></i>
+          Villas &amp; Houses
+        </span>
+      </div>
+
+      <a href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20your%20real%20estate%20and%20property%20services." class="specialty-link">
+        Enquire Now <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="specialty-visual">
+      <img 
+        src="assets/img/construction.png" 
+        alt="Commercial and Residential Building Construction" 
+        class="img-fluid"
+      >
+      <div class="visual-overlay">
+        <i class="bi bi-bricks"></i>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Construction Card -->
+
+    </div>
+
+
+    <!-- Consultation Banner -->
+    <div class="emergency-banner" data-aos="fade-up" data-aos-delay="400">
+
+      <div class="row align-items-center">
+
+        <div class="col-lg-8">
+          <div class="emergency-content">
+
+            <h3>Looking for the Right Property Solution?</h3>
+
+            <p>
+              Whether you're looking to buy, sell, rent, lease, manage,
+              or construct a property, our experts are here to help you
+              make the right decision.
+            </p>
+
+          </div>
         </div>
 
-        <div class="emergency-banner" data-aos="fade-up" data-aos-delay="400">
-          <div class="row align-items-center">
-            <div class="col-lg-8">
-              <div class="emergency-content">
-                <h3>Looking for Property Consultation?</h3>
-                <p>Our expert real estate advisors are available to guide you through investment opportunities and premium property acquisitions.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-              <a href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20Ekal%20Ventures%20project." class="emergency-btn">
-                <i class="bi bi-whatsapp"></i>
-                Chat on WhatsApp
-              </a>
-            </div>
-          </div>
+        <div class="col-lg-4 text-lg-end">
+
+          <a 
+            href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20your%20real%20estate%20and%20property%20services."
+            class="emergency-btn"
+          >
+            <i class="bi bi-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+
         </div>
 
       </div>
 
-    </section><!-- /Featured Departments Section -->
+    </div>
+    <!-- End Consultation Banner -->
+
+  </div>
+
+</section>
+<!-- /Featured Departments Section -->
 <!-- Featured Services Section -->
     <section id="featured-services" class="featured-services section">
 
@@ -463,7 +559,7 @@
               <div class="service-details">
                 <h2>Dewscape – Where Luxury Meets Tranquility</h2>
                 <p>With land development now complete and foundation work underway, Dewscape marks a bold new chapter in luxury real estate. Nestled in a serene location, Dewscape offers an exclusive living experience with private and plunge pools designed for ultimate relaxation.</p>
-                <a href="#contact" class="main-cta">Enquire About Dewscape</a>
+                <a href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20your%20real%20estate%20and%20property%20services." class="main-cta">Enquire About Dewscape</a>
               </div>
             </div>
           </div>
@@ -476,7 +572,7 @@
                   <i class="bi bi-water"></i>
                 </div>
                 <div class="service-info">
-                  <h4>Plunge Pools</h4>
+                  <h4>Premium Pool</h4>
                   <p>Exclusive pool villaments offering private plunge pools for ultimate relaxation.</p>
                 </div>
               </div>
@@ -509,62 +605,7 @@
       </div>
 
     </section><!-- /Featured Services Section -->
-<!-- Comprehensive Property Solutions Section -->
-    <section id="property-solutions" class="property-solutions section light-background">
-      
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Real Estate & Property Solutions</h2>
-        <p>Comprehensive services for buyers, sellers, and property owners. Connect with our experts today.</p>
-      </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4 justify-content-center">
-          
-          <!-- Real Estate -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-4 h-100 text-center bg-white border rounded shadow-sm">
-              <div class="icon-box mb-3 mx-auto" style="width: 70px; height: 70px; background: color-mix(in srgb, var(--accent-color), transparent 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-buildings" style="font-size: 32px; color: var(--accent-color);"></i>
-              </div>
-              <h4 class="fw-bold mb-3">Real Estate</h4>
-              <p class="text-muted">Expert assistance to <strong>buy and sell</strong> both commercial and residential properties seamlessly.</p>
-            </div>
-          </div>
-
-          <!-- Property Management -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card p-4 h-100 text-center bg-white border rounded shadow-sm">
-              <div class="icon-box mb-3 mx-auto" style="width: 70px; height: 70px; background: color-mix(in srgb, var(--accent-color), transparent 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-building-gear" style="font-size: 32px; color: var(--accent-color);"></i>
-              </div>
-              <h4 class="fw-bold mb-3">Property Management</h4>
-              <p class="text-muted">Professional, end-to-end solutions to <strong>rent, lease, and manage</strong> your commercial and residential properties.</p>
-            </div>
-          </div>
-
-          <!-- Construction -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card p-4 h-100 text-center bg-white border rounded shadow-sm">
-              <div class="icon-box mb-3 mx-auto" style="width: 70px; height: 70px; background: color-mix(in srgb, var(--accent-color), transparent 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-bricks" style="font-size: 32px; color: var(--accent-color);"></i>
-              </div>
-              <h4 class="fw-bold mb-3">Construction</h4>
-              <p class="text-muted">High-quality services to <strong>construct residential and commercial buildings</strong> tailored to your exact specifications.</p>
-            </div>
-          </div>
-
-        </div>
-        
-        <!-- Global Section CTA -->
-        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-            <a href="https://api.whatsapp.com/send/?phone=918078780777&text=Hi%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20Ekal%20Ventures%20Services" target="_blank" class="btn btn-outline-success fw-bold px-5 py-3" style="color: var(--accent-color); border-color: var(--accent-color); border-radius: 50px;">
-                <i class="bi bi-whatsapp me-2"></i> Chat with our Experts
-            </a>
-        </div>
-
-      </div>
-    </section>
 <!-- Find A Doctor Section (Repurposed to Properties) -->
     <section id="find-a-doctor" class="find-a-doctor section">
 
@@ -678,7 +719,7 @@
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-telephone"></i>
-                  <span>+91 98478 18508 / +91 8078 780 777</span>
+                  <span>+91 8078 780 777</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-envelope"></i>
