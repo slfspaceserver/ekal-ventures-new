@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101c32">
-<meta name="description" content="Mohammed Rubesh — aviation leader, entrepreneur and Founder & CEO of Ekal Ventures and Palmeryn Estates.">
+<meta name="description" content="Mohammed Rubesh — aviation leader, entrepreneur and Founder & MD of Ekal Ventures.">
 <title>Mohammed Rubesh | A Life Across Horizons</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,8 +192,9 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
 .achievement b{transition:transform .35s,color .35s;display:inline-block}
 .achievement:hover b{transform:translateY(-4px);color:#e2c48f}
 .gallery-item{cursor:zoom-in}
-.gallery-item:after{content:"↗";position:absolute;right:15px;top:15px;width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.65);border-radius:50%;color:#fff;background:rgba(16,28,50,.2);opacity:0;transform:translateY(7px);transition:.3s}
+.gallery-item:after{content:"";position:absolute;right:15px;top:15px;width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.65);border-radius:50%;color:#fff;background:rgba(16,28,50,.2);opacity:0;transform:translateY(7px);transition:.3s}
 .gallery-item:hover:after{opacity:1;transform:translateY(0)}
+.gallery-item:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:15px}
 .gallery-item img{will-change:transform}
 .gallery-placeholder{transition:filter .45s,transform .6s}
 .gallery-item:hover .gallery-placeholder{filter:saturate(1.08);transform:scale(1.025)}
@@ -313,15 +314,78 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
  .contact-save-wrap{align-items:flex-start;flex-direction:column;gap:10px}
 }
 @media(max-width:420px){.hero-actions{grid-template-columns:1fr}}
-\n</style>
+\n
+
+/* Consistent original inline SVG icon system */
+.inline-icon{width:14px;height:14px;display:inline-block;vertical-align:-2px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.feature-icon{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.menu-icon{width:24px;height:24px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;transition:transform .25s}
+.menu-btn.is-open .menu-icon{transform:rotate(90deg)}
+
+/* MOBILE HERO BUTTON + SVG FIX — normal compact button height */
+.hero-actions{align-items:stretch}
+.hero-actions .button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  min-height:48px;
+  height:auto;
+  padding:12px 16px;
+  line-height:1.25;
+  white-space:normal;
+  text-align:center;
+}
+.hero-actions .button .inline-icon{
+  display:inline-block!important;
+  width:15px!important;
+  height:15px!important;
+  min-width:15px!important;
+  max-width:15px!important;
+  min-height:15px!important;
+  max-height:15px!important;
+  flex:0 0 15px!important;
+  position:static!important;
+  inset:auto!important;
+  overflow:visible!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.8!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  vertical-align:middle;
+}
+.hero-actions .button:after{pointer-events:none;z-index:0}
+.hero-actions .button>*{position:relative;z-index:1}
+.hero-actions .button .inline-icon{z-index:1}
+@media(max-width:700px){
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hero-actions .button{
+    width:100%;
+    min-height:50px;
+    height:auto;
+    padding:12px 9px!important;
+    font-size:9px!important;
+    letter-spacing:.09em;
+    line-height:1.25;
+    gap:6px;
+  }
+}
+@media(max-width:420px){
+  .hero-actions{grid-template-columns:1fr 1fr}
+  .hero-actions .button{min-height:48px;padding:11px 7px!important;font-size:8px!important}
+}
+
+</style>
 </head>
 <body>
 <header class="nav">
  <div class="wrap nav-inner">
   <a class="brand" href="#home">MR<span>.</span></a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   <nav class="nav-links" id="navLinks">
-   <a href="#about">About</a><a href="#aviation">Aviation</a><a href="#business">Ventures</a><a href="#journey">Journey</a><a href="#gallery">Gallery</a><a href="#values">Values</a><a class="nav-cta" href="#contact">Connect ↗</a>
+   <a href="#about">About</a><a href="#aviation">Aviation</a><a href="#business">Ventures</a><a href="#journey">Journey</a><a href="#gallery">Gallery</a><a href="#values">Values</a><a class="nav-cta" href="#contact">Connect <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
   </nav>
  </div>
 </header>
@@ -347,24 +411,24 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
    <div class="status"><i></i> Aviation leader · Entrepreneur · Founder</div>
    <div class="eyebrow">A life across horizons</div>
    <h1>Mohammed<br>Rubesh <em>.</em></h1>
-   <div class="hero-role">Founder &amp; CEO — Ekal Ventures &amp; Palmeryn Estates</div>
+   <div class="hero-role">Founder &amp; MD — Ekal Ventures</div>
    <p class="hero-copy">More than two decades in international aviation. A continuing journey in business and entrepreneurship. Guided by experience, shaped by people, and grounded in faith, humility and gratitude.</p>
    <div class="hero-actions">
-     <a class="button primary" href="#about">Discover my story ↗</a>
+     <a class="button primary" href="#about">Discover my story <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
      <a class="button ghost" href="#business">Explore my ventures</a>
-     <a class="button ghost" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
-     <a class="button save-contact-button" href="#save-contact" id="heroSaveContact">Save My Contact ↓</a>
+     <a class="button ghost" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener">Connect on LinkedIn <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+     <a class="button save-contact-button" href="https://ekalventures.com/nfc-rubesh-muhammed/" id="heroSaveContact">Save My Contact</a>
     </div>
     <div class="hero-socials" aria-label="Other ways to connect">
      <span>ALSO CONNECT</span>
-     <a href="https://wa.me/919847818508" target="_blank" rel="noopener">WhatsApp ↗</a>
-     <a href="mailto:mohdrubesh2022@gmail.com">Email ↗</a>
-     <a href="https://rubeshernikhal.com" target="_blank" rel="noopener">Website ↗</a>
+     <a href="https://wa.me/919847818508" target="_blank" rel="noopener">WhatsApp</a>
+     <a href="mailto:mohdrubesh2022@gmail.com">Email</a>
+     <a href="https://rubeshmohammed.com" target="_blank" rel="noopener">Website</a>
     </div>
    <div class="hero-stats">
     <div class="hero-stat"><strong>20+ Years</strong><span>Global aviation</span></div>
     <div class="hero-stat"><strong>4 Airlines</strong><span>Career experience</span></div>
-    <div class="hero-stat"><strong>Founder &amp; CEO</strong><span>Current ventures</span></div>
+    <div class="hero-stat"><strong>Founder &amp; MD</strong><span>Current ventures</span></div>
    </div>
   </div>
   <div class="hero-portrait hero-carousel reveal" id="heroCarousel" aria-label="Mohammed Rubesh photo gallery">
@@ -399,7 +463,7 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
      <button type="button" class="hero-photo-dot" aria-label="Show business networking photo"></button>
      <button type="button" class="hero-photo-dot" aria-label="Show Business Conclave portrait"></button>
     </div>
-    <div class="hero-photo-arrows"><button type="button" id="heroPhotoPrev" aria-label="Previous photo">←</button><button type="button" id="heroPhotoNext" aria-label="Next photo">→</button></div>
+    <div class="hero-photo-arrows"><button type="button" id="heroPhotoPrev" aria-label="Previous photo"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><button type="button" id="heroPhotoNext" aria-label="Next photo"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
    </div>
    <div class="photo-index">EXPERIENCE · LEADERSHIP · PURPOSE</div>
   </div>
@@ -415,7 +479,7 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
     <p class="lead">I’m Mohammed Rubesh — an aviation professional and entrepreneur with over 20 years of international experience across full-service, low-cost and hybrid airline environments.</p>
     <p>My professional journey began in airline reservations and grew through sales, station operations, commercial leadership and market development. I have worked with Qatar Airways, Oman Air, Bahrain Air and flydubai, taking on responsibilities across South Asia and the GCC.</p>
     <p>Along the way, I have helped launch airline stations, build travel-trade relationships, lead teams, strengthen regional sales networks and improve commercial performance. Those experiences continue to inform how I approach business today.</p>
-    <p>Today, I serve as Founder &amp; CEO of Ekal Ventures and Palmeryn Estates, bringing an international outlook and an entrepreneurial mindset to new opportunities.</p>
+    <p>Today, I serve as Founder &amp; MD of Ekal Ventures, bringing an international outlook and an entrepreneurial mindset to new opportunities.</p>
     <div class="story-tags"><span>Global perspective</span><span>Commercial leadership</span><span>Entrepreneurship</span><span>People-first thinking</span></div>
    </div>
   </div>
@@ -446,8 +510,7 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
  <div class="wrap">
   <div class="section-head reveal"><div><div class="eyebrow">03 / Business &amp; entrepreneurship</div><h2>Taking experience<br><em>into new ventures.</em></h2></div><p>Today, my focus extends beyond aviation into building businesses, exploring opportunities and creating long-term value.</p></div>
   <div class="business-grid">
-   <article class="business-card reveal"><div class="index">CURRENT VENTURE · 01</div><h3>Ekal Ventures</h3><p>Leading the venture with an independent, opportunity-led approach informed by years of international commercial and operational experience.</p><span class="role">Founder &amp; CEO</span></article>
-   <article class="business-card reveal"><div class="index">CURRENT VENTURE · 02</div><h3>Palmeryn Estates</h3><p>Building with a long-term perspective across real estate, development and investment opportunities.</p><span class="role">Founder &amp; CEO</span></article>
+   <article class="business-card reveal"><div class="index">CURRENT VENTURE · 01</div><h3>Ekal Ventures</h3><p>Leading the venture with an independent, opportunity-led approach informed by years of international commercial and operational experience.</p><span class="role">Founder &amp; MD</span></article>
   </div>
   <p class="gallery-note">Company descriptions can be expanded with verified business profiles, active projects and official links.</p>
  </div>
@@ -464,7 +527,7 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
    <i class="flow-connector"></i>
    <div class="flow-step"><span>03</span><strong>Regional leadership</strong><small>Station &amp; operations management</small></div>
    <i class="flow-connector"></i>
-   <div class="flow-step current"><span>04</span><strong>Entrepreneurship</strong><small>Founder &amp; CEO</small></div>
+   <div class="flow-step current"><span>04</span><strong>Entrepreneurship</strong><small>Founder &amp; MD</small></div>
   </div>
   <div class="journey">
    <div class="journey-row reveal"><div class="journey-date">2001 — 2007</div><div><h3>Reservation Supervisor</h3><div class="company">Qatar Airways</div></div><p>Led and supported reservations teams, daily briefings, customer service standards, operational efficiency and revenue targets.</p></div>
@@ -473,7 +536,7 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
    <div class="journey-row reveal"><div class="journey-date">2010 — 2012*</div><div><h3>Manager — Nepal</h3><div class="company">Bahrain Air</div></div><p>Directed commercial and operational activity, developed GSA and agency relationships, expanded the agent network and drove station revenue growth.</p></div>
    <div class="journey-row reveal"><div class="journey-date">2013 — 2021*</div><div><h3>Commercial Officer</h3><div class="company">flydubai · Eastern Province, KSA</div></div><p>Led regional commercial operations, oversaw 31 weekly flights, served as Station Head for Alhasa (Hofuf), and developed market presence.</p></div>
    <div class="journey-row reveal"><div class="journey-date">2022 — Present*</div><div><h3>Executive Director</h3><div class="company">Airchoice Travel Services</div></div><p>Co-founded and led a travel and tourism business across holiday packages, air ticketing, hotel bookings and visa assistance.</p></div>
-   <div class="journey-row reveal"><div class="journey-date">Current</div><div><h3>Founder &amp; CEO</h3><div class="company">Ekal Ventures &amp; Palmeryn Estates</div></div><p>Leading current ventures with a focus on entrepreneurship, business development and long-term opportunity.</p></div>
+   <div class="journey-row reveal"><div class="journey-date">Current</div><div><h3>Founder &amp; MD</h3><div class="company">Ekal Ventures</div></div><p>Leading current ventures with a focus on entrepreneurship, business development and long-term opportunity.</p></div>
   </div>
   <p class="gallery-note">*Dates follow the Career Contour section of the supplied CV. Please confirm the exact dates for Oman Air, Bahrain Air, flydubai and Airchoice before publishing; the CV contains differing date entries in its detailed experience section.</p>
   <div class="achievement-highlight">
@@ -525,12 +588,12 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
  <div class="wrap">
   <div class="section-head reveal"><div><div class="eyebrow">07 / Beyond business</div><h2>What keeps the journey<br><em>in perspective.</em></h2></div><p>Professional ambition matters. So do the quieter values that shape how we live, treat people and define success.</p></div>
   <div class="values-grid reveal">
-   <div class="values-quote"><div class="star">✦</div><p>“Faith gives perspective. Humility keeps us grounded. Gratitude helps us recognise the value of every day.”</p></div>
+   <div class="values-quote"><div class="star"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></div><p>“Faith gives perspective. Humility keeps us grounded. Gratitude helps us recognise the value of every day.”</p></div>
    <div class="values-list">
-    <div><span class="num">01</span><section><h3>Faith &amp; spirituality</h3><p>A personal source of guidance, reflection and perspective — present in everyday choices rather than displayed as a claim.</p></section><b>✧</b></div>
-    <div><span class="num">02</span><section><h3>Humility &amp; gratitude</h3><p>Staying grounded, appreciating opportunities and recognising the contributions of others.</p></section><b>✧</b></div>
-    <div><span class="num">03</span><section><h3>Family &amp; relationships</h3><p>Making room for family, meaningful connections, kindness and humanity.</p></section><b>✧</b></div>
-    <div><span class="num">04</span><section><h3>Nature &amp; reflection</h3><p>Taking time to pause, reconnect and appreciate the world beyond work.</p></section><b>✧</b></div>
+    <div><span class="num">01</span><section><h3>Faith &amp; spirituality</h3><p>A personal source of guidance, reflection and perspective — present in everyday choices rather than displayed as a claim.</p></section><b><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></b></div>
+    <div><span class="num">02</span><section><h3>Humility &amp; gratitude</h3><p>Staying grounded, appreciating opportunities and recognising the contributions of others.</p></section><b><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></b></div>
+    <div><span class="num">03</span><section><h3>Family &amp; relationships</h3><p>Making room for family, meaningful connections, kindness and humanity.</p></section><b><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></b></div>
+    <div><span class="num">04</span><section><h3>Nature &amp; reflection</h3><p>Taking time to pause, reconnect and appreciate the world beyond work.</p></section><b><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></b></div>
    </div>
   </div>
  </div>
@@ -540,14 +603,14 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
  <div class="wrap">
   <div class="contact-head"><div><div class="eyebrow">08 / Connect</div><h2>Good conversations<br>can open new horizons.</h2></div><p>For professional conversations, business enquiries, partnerships and meaningful connections.</p></div>
   <div class="connect-grid">
-   <a class="connect-card" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener"><span>01</span><strong>LinkedIn</strong><small>Professional network</small><em>View profile ↗</em></a>
-   <a class="connect-card" href="https://wa.me/919847818508" target="_blank" rel="noopener"><span>02</span><strong>WhatsApp</strong><small>Direct conversation</small><em>+91 98478 18508 ↗</em></a>
-   <a class="connect-card" href="mailto:mohdrubesh2022@gmail.com"><span>03</span><strong>Email</strong><small>Business enquiries</small><em>mohdrubesh2022@gmail.com ↗</em></a>
+   <a class="connect-card" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener"><span>01</span><strong>LinkedIn</strong><small>Professional network</small><em>View profile</em></a>
+   <a class="connect-card" href="https://wa.me/919847818508" target="_blank" rel="noopener"><span>02</span><strong>WhatsApp</strong><small>Direct conversation</small><em>+91 98478 18508<br>+91 80787 80777</em></a>
+   <a class="connect-card" href="mailto:mohdrubesh2022@gmail.com"><span>03</span><strong>Email</strong><small>Business enquiries</small><em>mohdrubesh2022@gmail.com</em></a>
    <div class="connect-card"><span>04</span><strong>NFC Digital Card</strong><small>Share contact details instantly</small><em>Digital card link to add</em></div>
   </div>
   <div class="contact-save-wrap" id="save-contact">
-   <a class="button save-contact-button" href="#" id="saveContactButton" download="Mohammed-Rubesh.vcf">↓&nbsp; Save My Contact</a>
-   <span class="save-contact-note">Add my details directly to your phone contacts.</span>
+   <a class="button save-contact-button" href="https://ekalventures.com/nfc-rubesh-muhammed/" id="saveContactButton">Save My Contact</a>
+   <span class="save-contact-note">Open the digital contact card to save Mohammed Rubesh to your phone.</span>
   </div>
  </div></section>
 </main>
@@ -578,33 +641,13 @@ a,button,.business-card,.achievement,.metric,.info-card,.experience-card,.connec
 })();
 
 
-// Save contact: generate a standards-based vCard for phones and address books.
-(() => {
- const vcard = [
-  'BEGIN:VCARD',
-  'VERSION:3.0',
-  'N:Rubesh;Mohammed;;;',
-  'FN:Mohammed Rubesh',
-  'ORG:Ekal Ventures;Palmeryn Estates',
-  'TITLE:Founder & CEO',
-  'TEL;TYPE=CELL,VOICE:+919847818508',
-  'EMAIL;TYPE=INTERNET:mohdrubesh2022@gmail.com',
-  'URL:https://rubeshernikhal.com',
-  'URL;TYPE=LinkedIn:https://www.linkedin.com/in/rubesh-mohammed',
-  'END:VCARD'
- ].join('\r\n');
- const href='data:text/vcard;charset=utf-8,'+encodeURIComponent(vcard);
- ['saveContactButton','heroSaveContact'].forEach(id=>{
-  const button=document.getElementById(id);
-  if(button){button.href=href;button.setAttribute('download','Mohammed-Rubesh.vcf');}
- });
-})();
+// Save Contact buttons open the hosted NFC contact page.
 const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
 const siteNav=document.querySelector('.nav');
 const updateNav=()=>siteNav.classList.toggle('scrolled',window.scrollY>24);
 window.addEventListener('scroll',updateNav,{passive:true});updateNav();
-menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.classList.toggle('is-open',open);});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.classList.remove('is-open');}));
 document.getElementById('year').textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
