@@ -189,12 +189,41 @@ const wrap=document.getElementById('flipWrap');
 function flip(){const state=wrap.classList.toggle('is-flipped');wrap.setAttribute('aria-pressed',String(state));}
 wrap.addEventListener('click',e=>{if(e.target.closest('a,button'))return;flip();});
 wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}});
-function downloadContact(e){
+async function downloadContact(e){
  e.preventDefault();
  e.stopPropagation();
- // Open the vCard directly so the phone can hand it to its Contacts app.
- // Keep Mohammed-Rubesh.vcf in the same folder as this HTML page.
- window.location.href = 'Mohammed-Rubesh.vcf';
+ const vcard = [
+  'BEGIN:VCARD',
+  'VERSION:3.0',
+  'N:Rubesh;Mohammed;;;',
+  'FN:Mohammed Rubesh',
+  'ORG:Ekal Ventures',
+  'TITLE:Founder & MD',
+  'TEL;TYPE=CELL,VOICE:+919847818508',
+  'EMAIL;TYPE=INTERNET:mohdrubesh2022@gmail.com',
+  'URL:https://rubeshmohammed.com',
+  'END:VCARD'
+ ].join('\r\n') + '\r\n';
+ const file = new File([vcard], 'Mohammed-Rubesh.vcf', {type:'text/vcard'});
+ // Phones: invoke the native share sheet with a real vCard file. The user can
+ // choose Contacts / Create Contact from the system sheet where supported.
+ try {
+  if (navigator.canShare && navigator.canShare({files:[file]}) && navigator.share) {
+   await navigator.share({files:[file], title:'Mohammed Rubesh contact'});
+   return;
+  }
+ } catch (err) {
+  if (err && err.name === 'AbortError') return;
+ }
+ // Desktop and browsers without file sharing: download a valid vCard.
+ const url = URL.createObjectURL(new Blob([vcard], {type:'text/vcard;charset=utf-8'}));
+ const a = document.createElement('a');
+ a.href = url;
+ a.download = 'Mohammed-Rubesh.vcf';
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+ setTimeout(() => URL.revokeObjectURL(url), 30000);
 }
 document.getElementById('saveContact')?.addEventListener('click',downloadContact);
 document.getElementById('saveContactFront')?.addEventListener('click',downloadContact);
