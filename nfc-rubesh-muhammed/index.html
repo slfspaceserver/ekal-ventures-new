@@ -1,280 +1,1140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101c32">
 <meta name="description" content="Mohammed Rubesh — Founder & MD of Ekal Ventures.">
 <title>Mohammed Rubesh | Interactive NFC Card</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
 <style>
-:root{--navy:#101c32;--navy2:#1b2b46;--gold:#c6a56e;--gold2:#9c7b48;--ivory:#f6f1e7;--paper:#fffdf8;--emerald:#176b57;--muted:#687184}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 10%,rgba(198,165,110,.18),transparent 27%),radial-gradient(circle at 92% 82%,rgba(23,107,87,.09),transparent 26%),var(--ivory);color:var(--navy);font-family:"DM Sans",sans-serif;display:flex;align-items:center;justify-content:center;padding:28px 15px;overflow-x:hidden}
-.stage{width:min(100%,440px);perspective:1400px}
-.intro{text-align:center;margin-bottom:19px}
-.brand{font:800 15px Manrope,sans-serif;letter-spacing:-.07em;color:var(--navy)}
-.brand span{color:var(--gold2)}
-.intro p{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#84785f;margin:7px 0 0}
-.flip-wrap{position:relative;width:100%;height:610px;perspective:1400px;cursor:pointer;outline:none;touch-action:pan-y}
-.flip-card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.72,.2,1);border-radius:4px}
-.flip-wrap.is-flipped .flip-card{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(198,165,110,.7);background:var(--paper);box-shadow:0 28px 80px rgba(16,28,50,.18);border-radius:4px;isolation:isolate;}.front{visibility:visible;z-index:2}.back{visibility:hidden;z-index:1}.flip-wrap.is-flipped .front{visibility:hidden;z-index:1}.flip-wrap.is-flipped .back{visibility:visible;z-index:2}
-.front{background:linear-gradient(155deg,var(--navy),#172842 70%,#20334c);color:var(--ivory);display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 26px 23px}
-.front:before,.front:after{content:"";position:absolute;border:1px solid rgba(198,165,110,.25);border-radius:50%;width:390px;height:390px;top:-235px;left:50%;transform:translateX(-50%);pointer-events:none}
-.front:after{width:315px;height:315px;top:-197px;border-color:rgba(198,165,110,.17)}
-.corner{position:absolute;width:48px;height:48px;border-color:var(--gold);opacity:.8}
-.corner.tl{top:13px;left:13px;border-top:1px solid;border-left:1px solid}
-.corner.tr{top:13px;right:13px;border-top:1px solid;border-right:1px solid}
-.corner.bl{bottom:13px;left:13px;border-bottom:1px solid;border-left:1px solid}
-.corner.br{bottom:13px;right:13px;border-bottom:1px solid;border-right:1px solid}
-.monogram{font:600 12px Manrope,sans-serif;letter-spacing:.2em;color:var(--gold);position:relative;z-index:1}
-.photo-ring{width:126px;height:145px;margin:20px auto 12px;padding:5px;border:1px solid var(--gold);background:rgba(255,255,255,.07);position:relative;z-index:1;box-shadow:0 14px 36px rgba(0,0,0,.2)}
-.photo-ring img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}
-.name{font:600 clamp(29px,8vw,36px)/1.03 Manrope,sans-serif;letter-spacing:-.075em;color:#fff;margin:0}
-.title{font-size:11px;color:#e7d7b8;font-weight:700;margin-top:11px}
-.companies{font-size:10px;color:#c7ced7;margin-top:5px}
-.motto{font:italic 13px/1.45 "Playfair Display",serif;color:#d7c8ac;margin:10px 0 0;max-width:285px}
-.front-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;width:100%;border-top:1px solid rgba(198,165,110,.35);padding-top:15px;color:#c5b18d;font-size:8px;letter-spacing:.16em;text-transform:uppercase}
-.tap-hint{display:flex;align-items:center;gap:7px;color:#fff;font-size:9px;letter-spacing:.13em;text-transform:uppercase}
-.tap-hint b{display:grid;place-items:center;width:21px;height:21px;border:1px solid rgba(198,165,110,.7);border-radius:50%;font-size:12px;color:var(--gold)}
-.back{transform:rotateY(180deg);display:flex;flex-direction:column;background:var(--paper);color:var(--navy)}
-.back-head{padding:22px 24px 17px;background:var(--navy);color:var(--ivory);position:relative;overflow:hidden}
-.back-head:after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(198,165,110,.22);border-radius:50%;right:-100px;top:-130px}
-.back-head small{font-size:8px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
-.back-head h2{font:600 23px Manrope,sans-serif;letter-spacing:-.06em;margin:8px 0 4px}
-.back-head p{font-size:10px;color:#c9d0d8;margin:0}
-.back-content{padding:13px 23px;display:flex;flex-direction:column;gap:0;flex:1}
-.contact{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(16,28,50,.09);text-decoration:none;color:var(--navy);min-height:53px}
-.contact:last-of-type{border-bottom:0}
-.contact-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#eee7da;color:var(--gold2);font-size:13px;flex:0 0 auto}
-.contact span.label{display:block;font-size:8px;letter-spacing:.08em;color:#7c8190;text-transform:uppercase;margin-bottom:3px}
-.contact strong{font:700 10px Manrope,sans-serif;overflow-wrap:anywhere}
-.contact .arr{margin-left:auto;color:var(--gold2)}
-.back-bottom{margin-top:auto;padding:13px 23px 18px;background:#f1ebdf}
-.qr-row{display:flex;align-items:center;gap:13px}
-.qr-row img{width:83px;height:83px;padding:5px;background:#fff;border:1px solid rgba(198,165,110,.65)}
-.qr-copy{flex:1}
-.qr-copy small{font-size:8px;color:var(--gold2);letter-spacing:.16em;text-transform:uppercase}
-.qr-copy strong{display:block;font:700 11px Manrope,sans-serif;margin:5px 0}
-.qr-copy a{font-size:9px;color:var(--emerald);text-decoration:none;font-weight:700}
-.back-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
-.back-actions button{padding:11px 7px;border:1px solid rgba(16,28,50,.2);background:transparent;color:var(--navy);font:700 8px Manrope,sans-serif;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:.25s}
-.back-actions button:first-child{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
-.back-actions button:hover{transform:translateY(-2px);border-color:var(--gold)}
-.flip-back-hint{text-align:center;padding:11px;background:#fffdf8;color:#88785d;font-size:8px;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid rgba(198,165,110,.25)}
-.below{text-align:center;margin-top:18px;color:#827861;font-size:9px;letter-spacing:.08em}
-.below strong{color:var(--navy)}
-.flip-wrap:hover .face{box-shadow:0 34px 90px rgba(16,28,50,.22)}
-@media(max-width:480px){
- body{padding:14px 12px 22px;align-items:flex-start}
- .stage{width:100%;max-width:390px;margin:0 auto}
- .flip-wrap{height:590px;min-height:590px}
- .front{padding:20px 16px 15px}
- .photo-ring{width:112px;height:128px;margin:16px auto 10px}
- .name{font-size:28px}
- .title{font-size:10px;margin-top:7px}
- .companies{font-size:9px}
- .motto{font-size:12px;margin-top:8px}
- .front-actions{margin:9px 0 6px;gap:6px}
- .front-save{min-height:33px;padding:6px 10px;font-size:8px}
- .front-socials{gap:5px}
- .front-socials a{min-height:26px;padding:4px 7px;font-size:6.5px}
- .front-bottom{padding-top:8px;font-size:7px}
- .back-head{padding:14px 16px 10px}
- .back-head h2{font-size:19px;margin:6px 0 3px}
- .back-content{padding:3px 15px}
- .contact{min-height:42px;padding:6px 0;gap:8px}
- .contact-icon{width:26px;height:26px}
- .contact strong{font-size:9px}
- .back-bottom{padding:8px 15px 10px}
- .qr-row img{width:65px;height:65px}
- .back-actions{margin-top:7px}
- .back-actions button{padding:8px 5px;font-size:7px}
- .flip-back-hint{font-size:6px;padding:7px 4px}
- .below{margin-top:12px}
+:root {
+  --navy: #101c32;
+  --navy2: #1b2b46;
+  --gold: #c6a56e;
+  --gold2: #9c7b48;
+  --ivory: #f6f1e7;
+  --paper: #fffdf8;
+  --emerald: #176b57;
+  --muted: #687184;
 }
-@media(max-width:360px){
- .flip-wrap{height:590px;min-height:590px}
- .photo-ring{width:104px;height:118px;margin-top:14px}
- .front-socials a{font-size:6px;padding:4px 6px}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(198,165,110,.18), transparent 27%),
+    radial-gradient(circle at 92% 82%, rgba(23,107,87,.09), transparent 26%),
+    var(--ivory);
+  color: var(--navy);
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 15px;
+  overflow-x: hidden;
 }
-/* Fixed compact card dimensions: do not stretch to viewport height. */
-.intro{margin-bottom:10px}
-.flip-wrap{height:610px;min-height:0}
-.photo-ring{margin-top:16px;width:118px;height:136px}
-.motto{margin-top:10px}
-.contact{min-height:44px;padding:7px 0}
-.back-head{padding:14px 17px 11px}
-.back-content{padding-top:4px;padding-bottom:4px}
-.back-bottom{padding-top:8px;padding-bottom:10px}
-.qr-row img{width:68px;height:68px}
-@media(max-width:480px){.flip-wrap{height:590px;min-height:0}}
+
+.stage {
+  width: min(100%, 440px);
+  perspective: 1400px;
 }
-@media(prefers-reduced-motion:reduce){.flip-card{transition:none}*{scroll-behavior:auto!important}}
 
-.contact-icon svg,.arr svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
-.contact-icon{color:var(--gold2);background:#f1ebdf;border:1px solid rgba(198,165,110,.35)}
-.arr{display:grid;place-items:center;width:24px;height:24px;border:1px solid rgba(198,165,110,.4);border-radius:50%;color:var(--gold2);background:#fbf7ef}
+.intro {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
+.brand {
+  font: 800 15px Manrope, sans-serif;
+  letter-spacing: -.07em;
+  color: var(--navy);
+}
 
-/* First-page quick actions */
-.front-actions{position:relative;z-index:3;width:100%;margin:10px 0 7px;display:flex;flex-direction:column;gap:7px}
-.front-save{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:34px;padding:7px 12px;background:var(--gold);border:1px solid var(--gold);color:var(--navy);font:800 10px Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.2s}
-.front-save:hover{background:#d8bd8f;transform:translateY(-2px)}
-.front-socials{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
-.front-socials a{display:flex;align-items:center;justify-content:center;gap:5px;min-height:27px;padding:5px 8px;border:1px solid rgba(198,165,110,.55);color:#f6f1e7;text-decoration:none;font:700 8px Manrope,sans-serif;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.04);transition:.2s}
-.front-socials a:hover{background:rgba(198,165,110,.16);border-color:var(--gold)}
-.front-socials svg,.front-save svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-@media(max-width:480px){.front-actions{margin:12px 0 9px;gap:8px}.front-save{min-height:39px}.front-socials{gap:6px}.front-socials a{padding:6px 8px;font-size:7px}}
+.brand span { color: var(--gold2); }
 
+.intro p {
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #84785f;
+  margin: 7px 0 0;
+}
+
+.flip-wrap {
+  position: relative;
+  width: 100%;
+  height: 610px;
+  min-height: 0;
+  perspective: 1400px;
+  cursor: pointer;
+  outline: none;
+  touch-action: pan-y;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .9s cubic-bezier(.2,.72,.2,1);
+  border-radius: 4px;
+}
+
+.flip-wrap.is-flipped .flip-card {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  border: 1px solid rgba(198,165,110,.7);
+  background: var(--paper);
+  box-shadow: 0 28px 80px rgba(16,28,50,.18);
+  border-radius: 4px;
+  isolation: isolate;
+}
+
+.front {
+  visibility: visible;
+  z-index: 2;
+}
+
+.back {
+  visibility: hidden;
+  z-index: 1;
+}
+
+.flip-wrap.is-flipped .front {
+  visibility: hidden;
+  z-index: 1;
+}
+
+.flip-wrap.is-flipped .back {
+  visibility: visible;
+  z-index: 2;
+}
+
+.front {
+  background: linear-gradient(155deg,var(--navy),#172842 70%,#20334c);
+  color: var(--ivory);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 26px 23px;
+}
+
+.front:before,
+.front:after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(198,165,110,.25);
+  border-radius: 50%;
+  width: 390px;
+  height: 390px;
+  top: -235px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.front:after {
+  width: 315px;
+  height: 315px;
+  top: -197px;
+  border-color: rgba(198,165,110,.17);
+}
+
+.corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-color: var(--gold);
+  opacity: .8;
+}
+
+.corner.tl {
+  top: 13px;
+  left: 13px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner.tr {
+  top: 13px;
+  right: 13px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.corner.bl {
+  bottom: 13px;
+  left: 13px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner.br {
+  bottom: 13px;
+  right: 13px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.monogram {
+  font: 600 12px Manrope, sans-serif;
+  letter-spacing: .2em;
+  color: var(--gold);
+  position: relative;
+  z-index: 1;
+}
+
+.photo-ring {
+  width: 118px;
+  height: 136px;
+  margin: 16px auto 12px;
+  padding: 5px;
+  border: 1px solid var(--gold);
+  background: rgba(255,255,255,.07);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 14px 36px rgba(0,0,0,.2);
+}
+
+.photo-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+  display: block;
+}
+
+.name {
+  font: 600 clamp(29px,8vw,36px)/1.03 Manrope, sans-serif;
+  letter-spacing: -.075em;
+  color: #fff;
+  margin: 0;
+}
+
+.title {
+  font-size: 11px;
+  color: #e7d7b8;
+  font-weight: 700;
+  margin-top: 11px;
+}
+
+.companies {
+  font-size: 10px;
+  color: #c7ced7;
+  margin-top: 5px;
+}
+
+.motto {
+  font: italic 13px/1.45 "Playfair Display", serif;
+  color: #d7c8ac;
+  margin: 10px 0 0;
+  max-width: 285px;
+}
+
+.front-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid rgba(198,165,110,.35);
+  padding-top: 15px;
+  color: #c5b18d;
+  font-size: 8px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.tap-hint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.tap-hint b {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border: 1px solid rgba(198,165,110,.7);
+  border-radius: 50%;
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--navy);
+}
+
+.back-head {
+  padding: 14px 17px 11px;
+  background: var(--navy);
+  color: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+
+.back-head:after {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(198,165,110,.22);
+  border-radius: 50%;
+  right: -100px;
+  top: -130px;
+}
+
+.back-head small {
+  font-size: 8px;
+  letter-spacing: .2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.back-head h2 {
+  font: 600 23px Manrope, sans-serif;
+  letter-spacing: -.06em;
+  margin: 8px 0 4px;
+}
+
+.back-head p {
+  font-size: 10px;
+  color: #c9d0d8;
+  margin: 0;
+}
+
+.back-content {
+  padding: 4px 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(16,28,50,.09);
+  text-decoration: none;
+  color: var(--navy);
+  min-height: 44px;
+}
+
+.contact:last-of-type { border-bottom: 0; }
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1ebdf;
+  color: var(--gold2);
+  border: 1px solid rgba(198,165,110,.35);
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+
+.contact span.label {
+  display: block;
+  font-size: 8px;
+  letter-spacing: .08em;
+  color: #7c8190;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.contact strong {
+  font: 700 10px Manrope, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.contact strong a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-icon svg,
+.arr svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arr {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(198,165,110,.4);
+  border-radius: 50%;
+  color: var(--gold2);
+  background: #fbf7ef;
+  margin-left: auto;
+}
+
+.back-bottom {
+  margin-top: auto;
+  padding: 8px 23px 10px;
+  background: #f1ebdf;
+}
+
+.qr-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.qr-row img {
+  width: 68px;
+  height: 68px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid rgba(198,165,110,.65);
+  object-fit: contain;
+}
+
+.qr-copy { flex: 1; }
+
+.qr-copy small {
+  font-size: 8px;
+  color: var(--gold2);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.qr-copy strong {
+  display: block;
+  font: 700 11px Manrope, sans-serif;
+  margin: 5px 0;
+}
+
+.qr-copy a {
+  font-size: 9px;
+  color: var(--emerald);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.back-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.back-actions button {
+  padding: 8px 5px;
+  border: 1px solid rgba(16,28,50,.2);
+  background: transparent;
+  color: var(--navy);
+  font: 700 8px Manrope, sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.back-actions button:first-child {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--ivory);
+}
+
+.back-actions button:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+.flip-back-hint {
+  text-align: center;
+  padding: 7px 4px;
+  background: #fffdf8;
+  color: #88785d;
+  font-size: 6px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(198,165,110,.25);
+}
+
+.below {
+  text-align: center;
+  margin-top: 12px;
+  color: #827861;
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.below strong { color: var(--navy); }
+
+.flip-wrap:hover .face {
+  box-shadow: 0 34px 90px rgba(16,28,50,.22);
+}
+
+/* Front-side Save Contact and social buttons */
+.front-actions {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 10px 0 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.front-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 34px;
+  padding: 7px 12px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--navy);
+  font: 800 10px Manrope, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.front-save:hover {
+  background: #d8bd8f;
+  transform: translateY(-2px);
+}
+
+.front-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.front-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 27px;
+  padding: 5px 8px;
+  border: 1px solid rgba(198,165,110,.55);
+  color: #f6f1e7;
+  text-decoration: none;
+  font: 700 8px Manrope, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.04);
+  transition: .2s;
+}
+
+.front-socials a:hover {
+  background: rgba(198,165,110,.16);
+  border-color: var(--gold);
+}
+
+.front-socials svg,
+.front-save svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media(max-width:480px) {
+  body {
+    padding: 14px 12px 22px;
+    align-items: flex-start;
+  }
+
+  .stage {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .flip-wrap {
+    height: 590px;
+    min-height: 0;
+  }
+
+  .front { padding: 20px 16px 15px; }
+
+  .photo-ring {
+    width: 112px;
+    height: 128px;
+    margin: 16px auto 10px;
+  }
+
+  .name { font-size: 28px; }
+
+  .title {
+    font-size: 10px;
+    margin-top: 7px;
+  }
+
+  .companies { font-size: 9px; }
+
+  .motto {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .front-actions {
+    margin: 9px 0 6px;
+    gap: 6px;
+  }
+
+  .front-save {
+    min-height: 33px;
+    padding: 6px 10px;
+    font-size: 8px;
+  }
+
+  .front-socials { gap: 5px; }
+
+  .front-socials a {
+    min-height: 26px;
+    padding: 4px 7px;
+    font-size: 6.5px;
+  }
+
+  .front-bottom {
+    padding-top: 8px;
+    font-size: 7px;
+  }
+
+  .back-head { padding: 14px 16px 10px; }
+
+  .back-head h2 {
+    font-size: 19px;
+    margin: 6px 0 3px;
+  }
+
+  .back-content { padding: 3px 15px; }
+
+  .contact {
+    min-height: 42px;
+    padding: 6px 0;
+    gap: 8px;
+  }
+
+  .contact-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .contact strong { font-size: 9px; }
+
+  .back-bottom { padding: 8px 15px 10px; }
+
+  .qr-row img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .back-actions { margin-top: 7px; }
+
+  .back-actions button {
+    padding: 8px 5px;
+    font-size: 7px;
+  }
+
+  .flip-back-hint {
+    font-size: 6px;
+    padding: 7px 4px;
+  }
+
+  .below { margin-top: 12px; }
+}
+
+@media(max-width:360px) {
+  .flip-wrap {
+    height: 590px;
+    min-height: 0;
+  }
+
+  .photo-ring {
+    width: 104px;
+    height: 118px;
+    margin-top: 14px;
+  }
+
+  .front-socials a {
+    font-size: 6px;
+    padding: 4px 6px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .flip-card { transition: none; }
+  * { scroll-behavior: auto !important; }
+}
 </style>
 </head>
+
 <body>
 <main class="stage">
- <header class="intro"><div class="brand">MR<span>.</span></div><p>Tap the card to turn · Digital profile</p></header>
- <div class="flip-wrap" id="flipWrap" role="button" tabindex="0" aria-label="Flip digital business card" aria-pressed="false">
-  <div class="flip-card">
-   <section class="face front" aria-label="Front of business card">
-    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-    <div class="monogram">A LIFE ACROSS HORIZONS</div>
-    <div class="photo-ring"><img src="https://ekalventures.com/nfc-rubesh-muhammed/rubesh-pf.jpeg" alt="Mohammed Rubesh"></div>
-    <h1 class="name">Mohammed<br>Rubesh</h1>
-    <div class="title">FOUNDER &amp; MD</div>
-    <div class="companies">Ekal Ventures</div>
-    <p class="motto">Experience. Leadership. Entrepreneurship.</p>
-    <div class="front-actions" aria-label="Quick contact links">
-     <button class="front-save" type="button" id="saveContactFront">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v3h14v-3"/></svg>
-      Save Contact
-     </button>
-     <div class="front-socials">
-      <a href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
-       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"/></svg> LinkedIn
-      </a>
-      <a href="https://wa.me/919847818508" target="_blank" rel="noopener" aria-label="WhatsApp">
-       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1"/></svg> WhatsApp
-      </a>
-      <a href="https://rubeshmohammed.com" target="_blank" rel="noopener" aria-label="Personal website">
-       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18"/></svg> Website
-      </a>
-      <a href="mailto:mohdrubesh2022@gmail.com" aria-label="Send email">
-       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg> Email
-      </a>
-     </div>
+
+  <header class="intro">
+    <div class="brand">MR<span>.</span></div>
+    <p>Tap the card to turn · Digital profile</p>
+  </header>
+
+  <div class="flip-wrap" id="flipWrap" role="button" tabindex="0"
+       aria-label="Flip digital business card" aria-pressed="false">
+
+    <div class="flip-card">
+
+      <!-- FRONT SIDE -->
+      <section class="face front" aria-label="Front of business card">
+
+        <i class="corner tl"></i>
+        <i class="corner tr"></i>
+        <i class="corner bl"></i>
+        <i class="corner br"></i>
+
+        <div class="monogram">A LIFE ACROSS HORIZONS</div>
+
+        <div class="photo-ring">
+          <img
+            src="https://ekalventures.com/nfc-rubesh-muhammed/rubesh-pf.jpeg"
+            alt="Mohammed Rubesh">
+        </div>
+
+        <h1 class="name">Mohammed<br>Rubesh</h1>
+
+        <div class="title">FOUNDER &amp; MD</div>
+        <div class="companies">Ekal Ventures</div>
+
+        <p class="motto">Experience. Leadership. Entrepreneurship.</p>
+
+        <div class="front-actions" aria-label="Quick contact links">
+
+          <button class="front-save" type="button" id="saveContactFront">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m-5-5 5 5 5-5"/>
+              <path d="M5 17v3h14v-3"/>
+            </svg>
+            Save Contact
+          </button>
+
+          <div class="front-socials">
+
+            <a href="https://www.linkedin.com/in/rubesh-mohammed"
+               target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"/>
+              </svg>
+              LinkedIn
+            </a>
+
+            <a href="https://wa.me/919847818508"
+               target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/>
+                <path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1"/>
+              </svg>
+              WhatsApp
+            </a>
+
+            <a href="https://rubeshmohammed.com"
+               target="_blank" rel="noopener" aria-label="Personal website">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18M12 3a14 14 0 0 1 0 18"/>
+              </svg>
+              Website
+            </a>
+
+            <a href="mailto:mohdrubesh2022@gmail.com" aria-label="Send email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+              Email
+            </a>
+
+          </div>
+        </div>
+
+        <div class="front-bottom">
+          <span>Personal digital card</span>
+          <span class="tap-hint"><b>↻</b> Tap to flip</span>
+        </div>
+
+      </section>
+
+      <!-- BACK SIDE -->
+      <section class="face back" aria-label="Back of business card">
+
+        <div class="back-head">
+          <small>Connect professionally</small>
+          <h2>Let's stay connected.</h2>
+          <p>Mohammed Rubesh · Founder &amp; MD</p>
+        </div>
+
+        <div class="back-content">
+
+          <div class="contact">
+
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/>
+              </svg>
+            </span>
+
+            <span>
+              <span class="label">Phone</span>
+              <strong>
+                <a href="tel:+919847818508">+91 98478 18508</a>
+                <br>
+                <a href="tel:+918078780777">+91 80787 80777</a>
+              </strong>
+            </span>
+
+            <span class="arr">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"/>
+              </svg>
+            </span>
+
+          </div>
+
+          <a class="contact"
+             href="https://wa.me/919847818508"
+             target="_blank" rel="noopener">
+
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/>
+                <path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1c-.3 1.4-1.3 2-2.6 1.8-3.5-.7-6.1-3.3-6.8-6.8-.2-1.3.4-2.3 1.8-2.6l1 2Z"/>
+              </svg>
+            </span>
+
+            <span>
+              <span class="label">WhatsApp</span>
+              <strong>Message on WhatsApp</strong>
+            </span>
+
+            <span class="arr">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"/>
+              </svg>
+            </span>
+
+          </a>
+
+          <a class="contact" href="mailto:mohdrubesh2022@gmail.com">
+
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+            </span>
+
+            <span>
+              <span class="label">Email</span>
+              <strong>mohdrubesh2022@gmail.com</strong>
+            </span>
+
+            <span class="arr">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"/>
+              </svg>
+            </span>
+
+          </a>
+
+          <a class="contact"
+             href="https://www.linkedin.com/in/rubesh-mohammed"
+             target="_blank" rel="noopener">
+
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"/>
+              </svg>
+            </span>
+
+            <span>
+              <span class="label">LinkedIn</span>
+              <strong>Connect on LinkedIn</strong>
+            </span>
+
+            <span class="arr">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"/>
+              </svg>
+            </span>
+
+          </a>
+
+          <a class="contact"
+             href="https://rubeshmohammed.com"
+             target="_blank" rel="noopener">
+
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+              </svg>
+            </span>
+
+            <span>
+              <span class="label">Personal website</span>
+              <strong>rubeshmohammed.com</strong>
+            </span>
+
+            <span class="arr">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"/>
+              </svg>
+            </span>
+
+          </a>
+
+        </div>
+
+        <div class="back-bottom">
+
+          <div class="qr-row">
+
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4AQAAAADpqhamAAABSklEQVR4nO2YwQ7DMAhDn6f9/y97B0iTXXYrZEpbqZvwIXYgBJD5+bx+ww/+4H+NvwHFXyOD8GJp51ehHwMIOdRPSz+/Ev0oFAsrtyAt7fxKcUMEQdP6zbhlkX7vWL8Dj/i/JFuWV0s3vxL9GfBD+7T086vQvwS8mKmvZP0d8HB2HH0LWwJJu/C7E8+Ij9AfZU/kQbwBvyL9qd3j9rOwTqj/XoAEwnY4fuT/c+ofKyu/zH3mSoFb8Lsf93Q7Aos8Gpvwuw2XIdNdulxEDjjn/IOxbSTAFs5meBd+9+HYJl7W3je3xN38yu4/ov3NFvCyd/OrqH9H2RN139iB+HbzK+l/xrQnbn+tB6GbX03/O1ueOf47I/994TI5ArSxzpn/Xc8MfEUR1M2vRn8GfzhfWkzd/Er0j/lP/MQMLC/Abn6V93/H+g/+4J34BwspgOIJHDEjAAAAAElFTkSuQmCC"
+              alt="QR code linking to Mohammed Rubesh personal website">
+
+            <div class="qr-copy">
+              <small>Scan to explore</small>
+              <strong>My personal website</strong>
+              <a href="https://rubeshmohammed.com"
+                 target="_blank" rel="noopener">
+                rubeshmohammed.com ↗
+              </a>
+            </div>
+
+          </div>
+
+          <div class="back-actions">
+            <button type="button" id="saveContact">↓ &nbsp; Save contact</button>
+            <button type="button" id="shareCard">↗ &nbsp; Share card</button>
+          </div>
+
+        </div>
+
+        <div class="flip-back-hint">
+          Tap anywhere outside a link to return to front
+        </div>
+
+      </section>
     </div>
-    <div class="front-bottom"><span>Personal digital card</span><span class="tap-hint"><b>↻</b> Tap to flip</span></div>
-   </section>
-   <section class="face back" aria-label="Back of business card">
-    <div class="back-head"><small>Connect professionally</small><h2>Let's stay connected.</h2><p>Mohammed Rubesh · Founder &amp; MD</p></div>
-    <div class="back-content">
-     <div class="contact"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/></svg></span><span><span class="label">Phone</span><strong><a href="tel:+919847818508">+91 98478 18508</a><br><a href="tel:+918078780777">+91 80787 80777</a></strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
-     <a class="contact" href="https://wa.me/919847818508" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1c-.3 1.4-1.3 2-2.6 1.8-3.5-.7-6.1-3.3-6.8-6.8-.2-1.3.4-2.3 1.8-2.6l1 2Z"/></svg></span><span><span class="label">WhatsApp</span><strong>Message on WhatsApp</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-     <a class="contact" href="mailto:mohdrubesh2022@gmail.com"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span><span class="label">Email</span><strong>mohdrubesh2022@gmail.com</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-     <a class="contact" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"/></svg></span><span><span class="label">LinkedIn</span><strong>Connect on LinkedIn</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-     <a class="contact" href="https://rubeshmohammed.com" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><span class="label">Personal website</span><strong>rubeshmohammed.com</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-    </div>
-    <div class="back-bottom">
-     <div class="qr-row"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4AQAAAADpqhamAAABSklEQVR4nO2YwQ7DMAhDn6f9/y97B0iTXXYrZEpbqZvwIXYgBJD5+bx+ww/+4H+NvwHFXyOD8GJp51ehHwMIOdRPSz+/Ev0oFAsrtyAt7fxKcUMEQdP6zbhlkX7vWL8Dj/i/JFuWV0s3vxL9GfBD+7T086vQvwS8mKmvZP0d8HB2HH0LWwJJu/C7E8+Ij9AfZU/kQbwBvyL9qd3j9rOwTqj/XoAEwnY4fuT/c+ofKyu/zH3mSoFb8Lsf93Q7Aos8Gpvwuw2XIdNdulxEDjjn/IOxbSTAFs5meBd+9+HYJl7W3je3xN38yu4/ov3NFvCyd/OrqH9H2RN139iB+HbzK+l/xrQnbn+tB6GbX03/O1ueOf47I/994TI5ArSxzpn/Xc8MfEUR1M2vRn8GfzhfWkzd/Er0j/lP/MQMLC/Abn6V93/H+g/+4J34BwspgOIJHDEjAAAAAElFTkSuQmCC" alt="QR code linking to Mohammed Rubesh personal website"><div class="qr-copy"><small>Scan to explore</small><strong>My personal website</strong><a href="https://rubeshmohammed.com" target="_blank" rel="noopener">rubeshmohammed.com ↗</a></div></div>
-     <div class="back-actions"><button type="button" id="saveContact">↓ &nbsp; Save contact</button><button type="button" id="shareCard">↗ &nbsp; Share card</button></div>
-    </div>
-    <div class="flip-back-hint">Tap anywhere outside a link to return to front</div>
-   </section>
   </div>
- </div>
- <div class="below">A refined introduction to <strong>Mohammed Rubesh</strong></div>
+
+  <div class="below">
+    A refined introduction to <strong>Mohammed Rubesh</strong>
+  </div>
+
 </main>
+
 <script>
-const wrap=document.getElementById('flipWrap');
-function flip(){const state=wrap.classList.toggle('is-flipped');wrap.setAttribute('aria-pressed',String(state));}
-wrap.addEventListener('click',e=>{if(e.target.closest('a,button'))return;flip();});
-wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}});
-async function downloadContact(e){
- e.preventDefault();
- e.stopPropagation();
- const profileImage = document.querySelector('.photo-ring img');
- const imageSrc = profileImage?.getAttribute('src') || '';
- let photoBase64 = '';
- // Fetch the same portrait used on the card and embed it in the vCard when
- // the image host permits cross-origin access.
- try {
-  const response = await fetch(imageSrc, {mode:'cors', cache:'force-cache'});
-  if (response.ok) {
-   const photoBlob = await response.blob();
-   photoBase64 = await new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
-    reader.onerror = reject;
-    reader.readAsDataURL(photoBlob);
-   });
-  }
- } catch (err) {
-  console.warn('Could not embed profile photo in contact card:', err);
- }
- const lines = [
-  'BEGIN:VCARD',
-  'VERSION:3.0',
-  'N:Rubesh;Mohammed;;;',
-  'FN:Mohammed Rubesh',
-  'ORG:Ekal Ventures',
-  'TITLE:Founder & MD',
-  'TEL;TYPE=CELL,VOICE:+919847818508',
-  'TEL;TYPE=CELL,VOICE:+918078780777',
-  'EMAIL;TYPE=INTERNET:mohdrubesh2022@gmail.com',
-  'URL:https://rubeshmohammed.com'
- ];
- // Embed the portrait in the vCard so compatible Contacts apps can use it.
- if (photoBase64) {
-  const photoLine = 'PHOTO;ENCODING=b;TYPE=JPEG:' + photoBase64;
-  for (let i = 0; i < photoLine.length; i += 72) {
-   lines.push((i === 0 ? '' : ' ') + photoLine.slice(i, i + 72));
-  }
- }
- lines.push('END:VCARD');
- const vcard = lines.join('\r\n') + '\r\n';
- const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
- const url = URL.createObjectURL(blob);
- const ua = navigator.userAgent || '';
- const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
- const isAndroid = /Android/i.test(ua);
+const wrap = document.getElementById('flipWrap');
 
- if (isIOS) {
-  // Safari's native vCard preview is the closest match to the iPhone
-  // contact-preview screen: checkmark at top, contact details, Add Contact.
-  window.location.href = url;
-  // Do not revoke immediately; iOS needs time to open the native preview.
-  setTimeout(() => URL.revokeObjectURL(url), 60000);
-  return;
- }
-
- if (isAndroid && navigator.share && typeof File !== 'undefined') {
-  const file = new File([blob], 'Mohammed-Rubesh.vcf', {type:'text/vcard'});
-  try {
-   if (!navigator.canShare || navigator.canShare({files:[file]})) {
-    await navigator.share({files:[file], title:'Mohammed Rubesh'});
-    URL.revokeObjectURL(url);
-    return;
-   }
-  } catch(err) {
-   if (err && err.name === 'AbortError') { URL.revokeObjectURL(url); return; }
-  }
- }
-
- // Android browsers without file sharing and desktop browsers download the
- // vCard. Android users can tap the downloaded file to open Contacts.
- const a = document.createElement('a');
- a.href = url;
- a.download = 'Mohammed-Rubesh.vcf';
- document.body.appendChild(a);
- a.click();
- a.remove();
- setTimeout(() => URL.revokeObjectURL(url), 60000);
+function flip() {
+  const state = wrap.classList.toggle('is-flipped');
+  wrap.setAttribute('aria-pressed', String(state));
 }
-document.getElementById('saveContact')?.addEventListener('click',downloadContact);
-document.getElementById('saveContactFront')?.addEventListener('click',downloadContact);
-document.getElementById('shareCard').addEventListener('click',async e=>{
- e.stopPropagation();const data={title:'Mohammed Rubesh | Digital Business Card',text:'Founder & MD · Ekal Ventures',url:window.location.href};
- try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(window.location.href);alert('Digital card link copied.');}}catch(err){}
+
+wrap.addEventListener('click', e => {
+  if (e.target.closest('a,button')) return;
+  flip();
+});
+
+wrap.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    flip();
+  }
+});
+
+/* SAVE CONTACT */
+async function downloadContact(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const profileImage = document.querySelector('.photo-ring img');
+  const imageSrc = profileImage?.getAttribute('src') || '';
+
+  let photoBase64 = '';
+
+  try {
+    const response = await fetch(imageSrc, {
+      mode: 'cors',
+      cache: 'force-cache'
+    });
+
+    if (response.ok) {
+      const photoBlob = await response.blob();
+
+      photoBase64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          resolve(String(reader.result).split(',')[1] || '');
+        };
+
+        reader.onerror = reject;
+        reader.readAsDataURL(photoBlob);
+      });
+    }
+  } catch (err) {
+    console.warn('Could not embed profile photo in contact card:', err);
+  }
+
+  const lines = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:Rubesh;Mohammed;;;',
+    'FN:Mohammed Rubesh',
+    'ORG:Ekal Ventures',
+    'TITLE:Founder & MD',
+    'TEL;TYPE=CELL,VOICE:+919847818508',
+    'TEL;TYPE=CELL,VOICE:+918078780777',
+    'EMAIL;TYPE=INTERNET:mohdrubesh2022@gmail.com',
+    'URL:https://rubeshmohammed.com'
+  ];
+
+  if (photoBase64) {
+    const photoLine = 'PHOTO;ENCODING=b;TYPE=JPEG:' + photoBase64;
+
+    for (let i = 0; i < photoLine.length; i += 72) {
+      lines.push((i === 0 ? '' : ' ') + photoLine.slice(i, i + 72));
+    }
+  }
+
+  lines.push('END:VCARD');
+
+  const vcard = lines.join('\r\n') + '\r\n';
+
+  const blob = new Blob([vcard], {
+    type: 'text/vcard;charset=utf-8'
+  });
+
+  const url = URL.createObjectURL(blob);
+  const ua = navigator.userAgent || '';
+
+  const isIOS =
+    /iPhone|iPad|iPod/i.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  const isAndroid = /Android/i.test(ua);
+
+  if (isIOS) {
+    window.location.href = url;
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+    return;
+  }
+
+  if (isAndroid && navigator.share && typeof File !== 'undefined') {
+    const file = new File(
+      [blob],
+      'Mohammed-Rubesh.vcf',
+      { type: 'text/vcard' }
+    );
+
+    try {
+      if (!navigator.canShare || navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: 'Mohammed Rubesh'
+        });
+
+        URL.revokeObjectURL(url);
+        return;
+      }
+    } catch (err) {
+      if (err && err.name === 'AbortError') {
+        URL.revokeObjectURL(url);
+        return;
+      }
+    }
+  }
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Mohammed-Rubesh.vcf';
+
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+
+document.getElementById('saveContact')
+  ?.addEventListener('click', downloadContact);
+
+document.getElementById('saveContactFront')
+  ?.addEventListener('click', downloadContact);
+
+/* SHARE DIGITAL CARD */
+document.getElementById('shareCard').addEventListener('click', async e => {
+  e.stopPropagation();
+
+  const data = {
+    title: 'Mohammed Rubesh | Digital Business Card',
+    text: 'Founder & MD · Ekal Ventures',
+    url: window.location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(data);
+    } else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(window.location.href);
+      alert('Digital card link copied.');
+    }
+  } catch (err) {
+    // User cancelled sharing.
+  }
 });
 </script>
-</body></html>
+
+</body>
+</html>
