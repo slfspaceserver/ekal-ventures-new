@@ -16,10 +16,10 @@ body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 10%,rgba
 .brand{font:800 15px Manrope,sans-serif;letter-spacing:-.07em;color:var(--navy)}
 .brand span{color:var(--gold2)}
 .intro p{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#84785f;margin:7px 0 0}
-.flip-wrap{position:relative;width:100%;height:610px;perspective:1400px;cursor:pointer;outline:none}
+.flip-wrap{position:relative;width:100%;height:620px;perspective:1400px;cursor:pointer;outline:none;touch-action:pan-y}
 .flip-card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.72,.2,1);border-radius:4px}
 .flip-wrap.is-flipped .flip-card{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(198,165,110,.7);background:var(--paper);box-shadow:0 28px 80px rgba(16,28,50,.18);border-radius:4px}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(198,165,110,.7);background:var(--paper);box-shadow:0 28px 80px rgba(16,28,50,.18);border-radius:4px;isolation:isolate;}.front{visibility:visible;z-index:2}.back{visibility:hidden;z-index:1}.flip-wrap.is-flipped .front{visibility:hidden;z-index:1}.flip-wrap.is-flipped .back{visibility:visible;z-index:2}
 .front{background:linear-gradient(155deg,var(--navy),#172842 70%,#20334c);color:var(--ivory);display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 26px 23px}
 .front:before,.front:after{content:"";position:absolute;border:1px solid rgba(198,165,110,.25);border-radius:50%;width:390px;height:390px;top:-235px;left:50%;transform:translateX(-50%);pointer-events:none}
 .front:after{width:315px;height:315px;top:-197px;border-color:rgba(198,165,110,.17)}
@@ -66,8 +66,42 @@ body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 10%,rgba
 .below{text-align:center;margin-top:18px;color:#827861;font-size:9px;letter-spacing:.08em}
 .below strong{color:var(--navy)}
 .flip-wrap:hover .face{box-shadow:0 34px 90px rgba(16,28,50,.22)}
-@media(max-width:390px){.flip-wrap{height:590px}.front{padding:25px 19px 20px}.photo-ring{width:135px;height:157px;margin-top:32px}.back-head{padding:19px 19px 14px}.back-content{padding:9px 18px}.back-bottom{padding:11px 18px 15px}.contact{min-height:49px}}
+@media(max-width:480px){
+ body{padding:16px 12px 26px;align-items:flex-start}
+ .stage{width:100%;max-width:390px;margin:auto}
+ .flip-wrap{height: min(650px, calc(100svh - 112px));min-height:590px}
+ .front{padding:25px 19px 20px}
+ .photo-ring{width:132px;height:150px;margin-top:29px}
+ .motto{font-size:14px;margin-top:17px}
+ .back-head{padding:18px 18px 14px}
+ .back-head h2{font-size:21px}
+ .back-content{padding:7px 17px}
+ .contact{min-height:48px;padding:9px 0;gap:10px}
+ .contact-icon{width:29px;height:29px}
+ .contact strong{font-size:10px}
+ .back-bottom{padding:10px 17px 13px}
+ .qr-row img{width:76px;height:76px}
+ .back-actions button{padding:10px 5px;font-size:8px}
+ .flip-back-hint{font-size:7px;padding:9px 5px}
+}
+@media(max-height:720px) and (max-width:480px){
+ body{padding-top:9px;padding-bottom:12px}
+ .intro{margin-bottom:10px}
+ .flip-wrap{height:calc(100svh - 90px);min-height:560px}
+ .photo-ring{margin-top:20px;width:118px;height:136px}
+ .motto{margin-top:12px}
+ .contact{min-height:44px;padding:7px 0}
+ .back-head{padding:14px 17px 11px}
+ .back-content{padding-top:4px;padding-bottom:4px}
+ .back-bottom{padding-top:8px;padding-bottom:10px}
+ .qr-row img{width:68px;height:68px}
+}
 @media(prefers-reduced-motion:reduce){.flip-card{transition:none}*{scroll-behavior:auto!important}}
+
+.contact-icon svg,.arr svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.contact-icon{color:var(--gold2);background:#f1ebdf;border:1px solid rgba(198,165,110,.35)}
+.arr{display:grid;place-items:center;width:24px;height:24px;border:1px solid rgba(198,165,110,.4);border-radius:50%;color:var(--gold2);background:#fbf7ef}
+
 </style>
 </head>
 <body>
@@ -88,11 +122,11 @@ body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 10%,rgba
    <section class="face back" aria-label="Back of business card">
     <div class="back-head"><small>Connect professionally</small><h2>Let's stay connected.</h2><p>Mohammed Rubesh · Founder &amp; CEO</p></div>
     <div class="back-content">
-     <a class="contact" href="tel:+919847818508"><span class="contact-icon">☎</span><span><span class="label">Phone</span><strong>+91 98478 18508</strong></span><span class="arr">↗</span></a>
-     <a class="contact" href="https://wa.me/919847818508" target="_blank" rel="noopener"><span class="contact-icon">◉</span><span><span class="label">WhatsApp</span><strong>Message on WhatsApp</strong></span><span class="arr">↗</span></a>
-     <a class="contact" href="mailto:mohdrubesh2022@gmail.com"><span class="contact-icon">✉</span><span><span class="label">Email</span><strong>mohdrubesh2022@gmail.com</strong></span><span class="arr">↗</span></a>
-     <a class="contact" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener"><span class="contact-icon">in</span><span><span class="label">LinkedIn</span><strong>Connect on LinkedIn</strong></span><span class="arr">↗</span></a>
-     <a class="contact" href="https://rubeshernikhal.com" target="_blank" rel="noopener"><span class="contact-icon">↗</span><span><span class="label">Personal website</span><strong>rubeshernikhal.com</strong></span><span class="arr">↗</span></a>
+     <a class="contact" href="tel:+919847818508"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/></svg></span><span><span class="label">Phone</span><strong>+91 98478 18508</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+     <a class="contact" href="https://wa.me/919847818508" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1c-.3 1.4-1.3 2-2.6 1.8-3.5-.7-6.1-3.3-6.8-6.8-.2-1.3.4-2.3 1.8-2.6l1 2Z"/></svg></span><span><span class="label">WhatsApp</span><strong>Message on WhatsApp</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+     <a class="contact" href="mailto:mohdrubesh2022@gmail.com"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span><span class="label">Email</span><strong>mohdrubesh2022@gmail.com</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+     <a class="contact" href="https://www.linkedin.com/in/rubesh-mohammed" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"/></svg></span><span><span class="label">LinkedIn</span><strong>Connect on LinkedIn</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+     <a class="contact" href="https://rubeshernikhal.com" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><span class="label">Personal website</span><strong>rubeshernikhal.com</strong></span><span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
     </div>
     <div class="back-bottom">
      <div class="qr-row"><img src="data:image/png;base64,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" alt="QR code linking to Rubesh's website"><div class="qr-copy"><small>Scan to explore</small><strong>My personal website</strong><a href="https://rubeshernikhal.com" target="_blank" rel="noopener">rubeshernikhal.com ↗</a></div></div>
