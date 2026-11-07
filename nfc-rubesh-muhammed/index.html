@@ -189,49 +189,12 @@ const wrap=document.getElementById('flipWrap');
 function flip(){const state=wrap.classList.toggle('is-flipped');wrap.setAttribute('aria-pressed',String(state));}
 wrap.addEventListener('click',e=>{if(e.target.closest('a,button'))return;flip();});
 wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}});
-async function downloadContact(e){
+function downloadContact(e){
  e.preventDefault();
  e.stopPropagation();
- const vcard = [
-  'BEGIN:VCARD',
-  'VERSION:3.0',
-  'N:Rubesh;Mohammed;;;',
-  'FN:Mohammed Rubesh',
-  'ORG:Ekal Ventures',
-  'TITLE:Founder & MD',
-  'TEL;TYPE=CELL,VOICE:+919847818508',
-  'EMAIL;TYPE=INTERNET:mohdrubesh2022@gmail.com',
-  'URL:https://rubeshmohammed.com',
-  'NOTE:Founder & MD of Ekal Ventures',
-  'END:VCARD'
- ].join('\r\n') + '\r\n';
- const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
- const file = new File([blob], 'Mohammed-Rubesh.vcf', {type:'text/vcard'});
- try {
-  if (navigator.share && navigator.canShare && navigator.canShare({files:[file]})) {
-   await navigator.share({files:[file], title:'Mohammed Rubesh contact'});
-   return;
-  }
- } catch(err) {
-  if (err && err.name === 'AbortError') return;
- }
- const url = URL.createObjectURL(blob);
- const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
- if (isAppleMobile) {
-  // iOS Safari opens the vCard preview, where the user can choose Add to Contacts.
-  window.location.href = url;
-  setTimeout(()=>URL.revokeObjectURL(url), 60000);
- } else {
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'Mohammed-Rubesh.vcf';
-  a.style.display = 'none';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url), 15000);
- }
+ // Open the vCard directly so the phone can hand it to its Contacts app.
+ // Keep Mohammed-Rubesh.vcf in the same folder as this HTML page.
+ window.location.href = 'Mohammed-Rubesh.vcf';
 }
 document.getElementById('saveContact')?.addEventListener('click',downloadContact);
 document.getElementById('saveContactFront')?.addEventListener('click',downloadContact);
