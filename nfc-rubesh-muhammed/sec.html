@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101c32">
+<meta name="description" content="Mohammed Rubesh — Founder & MD, Ekal Ventures.">
+<title>Mohammed Rubesh | Digital Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #101c32;
+  --navy2: #1b2b46;
+  --gold: #c6a56e;
+  --gold2: #9c7b48;
+  --ivory: #f6f1e7;
+  --paper: #fffdf8;
+  --green: #176b57;
+  --muted: #687184;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--navy);
+  font-family: "DM Sans", sans-serif;
+}
+
+a { color: inherit; }
+
+.site-header {
+  height: 72px;
+  padding: 0 clamp(18px, 5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,253,248,.94);
+  border-bottom: 1px solid rgba(16,28,50,.1);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  font: 800 24px Manrope, sans-serif;
+  letter-spacing: -.08em;
+}
+
+.brand span { color: var(--gold2); }
+
+.menu-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(16,28,50,.14);
+  background: transparent;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.menu-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.page {
+  width: min(100%, 680px);
+  margin: 28px auto 50px;
+  padding: 0 18px;
+}
+
+.profile-shell {
+  overflow: hidden;
+  border: 1px solid rgba(198,165,110,.65);
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: 0 24px 70px rgba(16,28,50,.15);
+}
+
+/* HERO */
+
+.hero {
+  height: 520px;
+  min-height: 440px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(16,28,50,.05) 20%,
+      rgba(16,28,50,.15) 42%,
+      rgba(16,28,50,.94) 100%
+    ),
+    url("https://ekalventures.com/nfc-rubesh-muhammed/rubesh-pf.jpeg");
+  background-size: cover;
+  background-position: center 27%;
+}
+
+.hero-tools {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 50%;
+  background: rgba(16,28,50,.62);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.icon-button svg,
+.social-link svg,
+.action-button svg,
+.contact-line svg,
+.sticky-message svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 30px 22px 34px;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #e7d7b8;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font: 800 clamp(32px,7vw,48px)/1.05 Manrope,sans-serif;
+  letter-spacing: -.065em;
+  margin: 12px 0 8px;
+}
+
+.hero-role {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero-company {
+  font-size: 14px;
+  color: #e5e0d7;
+  margin-top: 6px;
+}
+
+/* INFORMATION */
+
+.info-strip {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #e7dfd0;
+}
+
+.info-item svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+/* ACTION BUTTONS */
+
+.actions {
+  padding: 20px 22px 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: var(--paper);
+}
+
+.action-button {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 28px;
+  text-decoration: none;
+  font: 700 13px Manrope,sans-serif;
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: white;
+  cursor: pointer;
+  transition: transform .2s, background .2s;
+}
+
+.action-button.secondary {
+  background: transparent;
+  color: var(--navy);
+  border-color: rgba(16,28,50,.22);
+}
+
+.action-button:active {
+  transform: scale(.98);
+}
+
+/* SOCIAL ICONS */
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px,3vw,20px);
+  padding: 20px 16px 24px;
+  background: var(--paper);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(23,107,87,.35);
+  background: #f4f4ed;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(16,28,50,.06);
+  transition: .2s;
+}
+
+.social-link:hover {
+  background: var(--green);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* NAVIGATION TABS */
+
+.tabs {
+  position: sticky;
+  top: 72px;
+  z-index: 10;
+  display: flex;
+  overflow-x: auto;
+  background: var(--paper);
+  border-top: 1px solid rgba(16,28,50,.08);
+  border-bottom: 1px solid rgba(16,28,50,.12);
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: 1 0 auto;
+  min-width: 95px;
+  padding: 17px 14px 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #687184;
+  font-weight: 700;
+  font-size: 13px;
+  border-bottom: 3px solid transparent;
+}
+
+.tab.active,
+.tab:hover {
+  color: var(--navy);
+  border-color: var(--green);
+}
+
+/* CONTENT */
+
+.content {
+  padding: 30px clamp(22px,6vw,42px) 34px;
+  background: var(--paper);
+}
+
+.section {
+  margin: 0 0 34px;
+  scroll-margin-top: 140px;
+}
+
+.section:last-child { margin-bottom: 0; }
+
+.section-kicker {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.section h2 {
+  font: 800 25px Manrope,sans-serif;
+  letter-spacing: -.045em;
+  margin: 0 0 13px;
+}
+
+.about-copy {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #596477;
+  margin: 0;
+}
+
+.about-note {
+  font: italic 15px/1.6 "Playfair Display",serif;
+  color: var(--gold2);
+  margin: 14px 0 0;
+}
+
+/* EXPERIENCE */
+
+.timeline {
+  border-left: 1px solid rgba(198,165,110,.7);
+  padding-left: 18px;
+  margin: 16px 0 0 5px;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 0 0 18px;
+}
+
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  left: -23px;
+  top: 5px;
+}
+
+.timeline-item strong {
+  display: block;
+  font: 700 14px Manrope,sans-serif;
+}
+
+.timeline-item span {
+  display: block;
+  color: #687184;
+  font-size: 13px;
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+/* VENTURES */
+
+.venture-card {
+  padding: 16px 17px;
+  border: 1px solid rgba(198,165,110,.45);
+  background: #faf6ed;
+  border-radius: 14px;
+  margin-top: 12px;
+}
+
+.venture-card strong {
+  font: 700 15px Manrope,sans-serif;
+}
+
+.venture-card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #687184;
+  margin: 6px 0 0;
+}
+
+/* CONTACT */
+
+.contact-panel {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 22px;
+  border-radius: 16px;
+}
+
+.contact-panel h2 { margin-bottom: 8px; }
+
+.contact-panel p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #cbd1d9;
+  margin: 0 0 16px;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.contact-line svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--gold);
+  flex: 0 0 auto;
+}
+
+/* STICKY WHATSAPP */
+
+.sticky-message {
+  position: sticky;
+  bottom: 12px;
+  z-index: 12;
+  padding: 0 18px 14px;
+  margin-top: -4px;
+  pointer-events: none;
+}
+
+.sticky-message a {
+  height: 50px;
+  border-radius: 28px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font: 700 14px Manrope,sans-serif;
+  box-shadow: 0 8px 24px rgba(16,28,50,.2);
+  pointer-events: auto;
+}
+
+.footer {
+  text-align: center;
+  color: #88785d;
+  font-size: 11px;
+  letter-spacing: .08em;
+  padding: 18px 10px 22px;
+}
+
+.footer strong { color: var(--navy); }
+
+/* QR POPUP */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(8,16,29,.72);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal.open { display: flex; }
+
+.modal-card {
+  width: min(100%,340px);
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-card h3 {
+  font: 800 20px Manrope,sans-serif;
+  margin: 0 0 8px;
+}
+
+.modal-card p {
+  font-size: 12px;
+  color: #687184;
+  margin: 0 0 16px;
+}
+
+#qrCode {
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  background: white;
+  padding: 8px;
+}
+
+.close-modal {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:520px) {
+  .site-header {
+    height: 62px;
+    padding: 0 18px;
+  }
+
+  .page {
+    margin: 0 auto 28px;
+    padding: 0;
+  }
+
+  .profile-shell {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .hero {
+    height: 500px;
+    min-height: 430px;
+    background-position: center 24%;
+  }
+
+  .hero-copy { padding-bottom: 28px; }
+
+  .info-strip {
+    gap: 10px 18px;
+    padding: 13px 12px;
+  }
+
+  .info-item { font-size: 11px; }
+
+  .actions {
+    padding: 16px 14px 5px;
+    gap: 8px;
+  }
+
+  .action-button {
+    height: 46px;
+    font-size: 11px;
+  }
+
+  .socials {
+    gap: 12px;
+    padding: 17px 12px 20px;
+  }
+
+  .social-link {
+    width: 46px;
+    height: 46px;
+  }
+
+  .tabs { top: 62px; }
+
+  .tab {
+    min-width: 84px;
+    padding: 14px 10px 12px;
+    font-size: 12px;
+  }
+
+  .content { padding: 26px 22px 30px; }
+
+  .section h2 { font-size: 23px; }
+
+  .about-copy { font-size: 14px; }
+
+  .sticky-message {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .footer { padding-bottom: 22px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+
+
+<main class="page" id="top">
+
+<article class="profile-shell">
+
+  <section class="hero" aria-label="Mohammed Rubesh profile">
+
+    <div class="hero-tools">
+
+      <button class="icon-button" id="showQR" type="button" aria-label="Show QR code">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <path d="M14 14h3v3h-3zM20 14v2M17 20h4M20 18v3"/>
+        </svg>
+      </button>
+
+      <button class="icon-button" id="shareProfile" type="button" aria-label="Share profile">
+        <svg viewBox="0 0 24 24">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <path d="m8.7 10.7 6.6-4.4M8.7 13.3l6.6 4.4"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <div class="hero-copy">
+      <div class="eyebrow">A life across horizons</div>
+      <h1>Mohammed Rubesh</h1>
+      <div class="hero-role">Founder &amp; MD</div>
+      <div class="hero-company">Ekal Ventures</div>
+    </div>
+
+  </section>
+
+  <div class="info-strip">
+
+    <div class="info-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </svg>
+      <span>Entrepreneur · Aviation</span>
+    </div>
+
+    <div class="info-item">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 7v5l3 2"/>
+      </svg>
+      <span>Leadership · Ventures</span>
+    </div>
+
+  </div>
+
+  <div class="actions">
+
+    <a class="action-button" href="tel:+919847818508">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/>
+      </svg>
+      Call
+    </a>
+
+    <button class="action-button secondary" id="saveContact" type="button">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3v12m-5-5 5 5 5-5"/>
+        <path d="M5 17v3h14v-3"/>
+      </svg>
+      Save to contacts
+    </button>
+
+  </div>
+
+  <nav class="socials" aria-label="Social links">
+
+    <a class="social-link" href="https://wa.me/919847818508" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/>
+        <path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1"/>
+      </svg>
+    </a>
+
+    <a class="social-link" href="tel:+918078780777" aria-label="Second phone number">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/>
+      </svg>
+    </a>
+
+    <a class="social-link" href="mailto:mohdrubesh2022@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m4 7 8 6 8-6"/>
+      </svg>
+    </a>
+
+    <a class="social-link" href="https://rubeshmohammed.com" aria-label="Website">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+      </svg>
+    </a>
+
+    <a class="social-link"
+       href="https://www.linkedin.com/in/rubesh-mohammed"
+       target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"/>
+      </svg>
+    </a>
+
+  </nav>
+
+  <nav class="tabs" aria-label="Profile sections">
+    <a class="tab active" href="#about">About</a>
+    <a class="tab" href="#experience">Experience</a>
+    <a class="tab" href="#ventures">Ventures</a>
+    <a class="tab" href="#contact">Contact</a>
+  </nav>
+
+  <div class="content">
+
+    <section class="section" id="about">
+      <div class="section-kicker">A little about me</div>
+      <h2>About Mohammed</h2>
+
+      <p class="about-copy">
+        With more than two decades of experience in international aviation,
+        Mohammed Rubesh is continuing his journey in business and
+        entrepreneurship as the Founder &amp; MD of Ekal Ventures.
+        His approach is shaped by experience, people, leadership and a
+        belief in staying grounded through faith, humility and gratitude.
+      </p>
+
+      <p class="about-note">
+        “Experience. Leadership. Entrepreneurship.”
+      </p>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-kicker">The journey</div>
+      <h2>Experience &amp; Leadership</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <strong>International Aviation</strong>
+          <span>
+            More than two decades of professional experience across
+            the aviation industry.
+          </span>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Entrepreneurship</strong>
+          <span>
+            Taking that experience into business, leadership and new ventures.
+          </span>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Ekal Ventures</strong>
+          <span>Founder &amp; Managing Director.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="ventures">
+      <div class="section-kicker">Building forward</div>
+      <h2>Business &amp; Ventures</h2>
+
+      <div class="venture-card">
+        <strong>Ekal Ventures</strong>
+        <p>
+          Building business opportunities with a focus on people,
+          practical execution and long-term relationships.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+
+      <div class="contact-panel">
+
+        <div class="section-kicker">Get in touch</div>
+        <h2>Let's connect.</h2>
+
+        <p>
+          For professional conversations, collaborations and business
+          enquiries, feel free to reach out.
+        </p>
+
+        <a class="contact-line" href="tel:+919847818508">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/>
+          </svg>
+          +91 98478 18508
+        </a>
+
+        <a class="contact-line" href="tel:+918078780777">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 3h4l2 5-2.5 1.8a15 15 0 0 0 5.7 5.7L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/>
+          </svg>
+          +91 80787 80777
+        </a>
+
+        <a class="contact-line" href="mailto:mohdrubesh2022@gmail.com">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m4 7 8 6 8-6"/>
+          </svg>
+          mohdrubesh2022@gmail.com
+        </a>
+
+        <a class="contact-line" href="https://rubeshmohammed.com">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M3 12h18M12 3a14 14 0 0 1 0 18"/>
+          </svg>
+          rubeshmohammed.com
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <div class="sticky-message">
+    <a href="https://wa.me/919847818508">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/>
+        <path d="M9 8.5c.5 2.4 2.1 4 4.5 5l1.2-1.1 2 1"/>
+      </svg>
+      Message on WhatsApp
+    </a>
+  </div>
+
+</article>
+
+<footer class="footer">
+  A refined introduction to <strong>Mohammed Rubesh</strong>
+</footer>
+
+</main>
+
+<!-- QR CODE POPUP -->
+
+<div class="modal" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+
+  <div class="modal-card">
+
+    <button class="close-modal" id="closeQR" aria-label="Close QR code">
+      &times;
+    </button>
+
+    <h3 id="qrTitle">Scan to connect</h3>
+    <p>Open Mohammed Rubesh's digital profile</p>
+
+    <img id="qrCode" alt="QR code for Mohammed Rubesh digital profile">
+
+    <p style="margin-top:12px">rubeshmohammed.com</p>
+
+  </div>
+</div>
+
+<script>
+const profileURL = "https://rubeshmohammed.com";
+
+const modal = document.getElementById("qrModal");
+
+document.getElementById("showQR").addEventListener("click", () => {
+  document.getElementById("qrCode").src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data="
+    + encodeURIComponent(profileURL);
+
+  modal.classList.add("open");
+});
+
+document.getElementById("closeQR").addEventListener("click", () => {
+  modal.classList.remove("open");
+});
+
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.remove("open");
+  }
+});
+
+/* SHARE PROFILE */
+
+document.getElementById("shareProfile").addEventListener("click", async () => {
+
+  const shareData = {
+    title: "Mohammed Rubesh | Ekal Ventures",
+    text: "Founder & MD of Ekal Ventures",
+    url: window.location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Profile link copied.");
+    } else {
+      window.prompt("Copy profile link:", window.location.href);
+    }
+  } catch(e) {}
+});
+
+/* SAVE CONTACT */
+
+async function saveContact() {
+
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Rubesh;Mohammed;;;",
+    "FN:Mohammed Rubesh",
+    "ORG:Ekal Ventures",
+    "TITLE:Founder & MD",
+    "TEL;TYPE=CELL,VOICE:+919847818508",
+    "TEL;TYPE=CELL,VOICE:+918078780777",
+    "EMAIL;TYPE=INTERNET:mohdrubesh2022@gmail.com",
+    "URL:https://rubeshmohammed.com",
+    "END:VCARD"
+  ].join("\r\n") + "\r\n";
+
+  const file = new File(
+    [vcard],
+    "Mohammed-Rubesh.vcf",
+    { type: "text/vcard" }
+  );
+
+  try {
+
+    if (
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({ files: [file] })
+    ) {
+      await navigator.share({
+        files: [file],
+        title: "Mohammed Rubesh contact"
+      });
+
+      return;
+    }
+
+  } catch(e) {
+
+    if (e.name === "AbortError") return;
+
+  }
+
+  const blob = new Blob(
+    [vcard],
+    { type: "text/vcard;charset=utf-8" }
+  );
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "Mohammed-Rubesh.vcf";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+}
+
+document.getElementById("saveContact")
+  .addEventListener("click", saveContact);
+
+/* ACTIVE TAB INDICATOR */
+
+const tabs = document.querySelectorAll(".tab");
+
+const sections = [
+  ...document.querySelectorAll(".section")
+];
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      tabs.forEach(tab => {
+
+        tab.classList.toggle(
+          "active",
+          tab.getAttribute("href") === "#" + entry.target.id
+        );
+
+      });
+
+    }
+
+  });
+
+}, {
+  rootMargin: "-25% 0px -60% 0px"
+});
+
+sections.forEach(section => observer.observe(section));
+
+</script>
+
+</body>
+</html>
