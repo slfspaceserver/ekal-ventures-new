@@ -437,6 +437,65 @@ a { color:inherit; }
   text-decoration:none;
 }
 
+.office-location {
+  margin-top:14px;
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.16);
+}
+.office-location-title {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 9px;
+  color:var(--gold);
+  font:700 12px Manrope,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.office-location-title svg {
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  flex:0 0 auto;
+}
+.office-address {
+  margin:0 0 13px;
+  color:#f2eee6;
+  font-size:13px;
+  line-height:1.75;
+}
+.office-map {
+  display:block;
+  width:100%;
+  height:220px;
+  border:0;
+  border-radius:12px;
+  background:#e8e2d7;
+}
+.office-map-link {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:11px;
+  color:#e7d7b8;
+  font:700 11px Manrope,sans-serif;
+  letter-spacing:.08em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.office-map-link svg {
+  width:15px;
+  height:15px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+}
+@media(max-width:520px) {
+  .office-map { height:190px; }
+}
+
 .contact-line svg {
   width:17px;
   height:17px;
@@ -1063,6 +1122,36 @@ a { color:inherit; }
           </svg>
           rubeshmohammed.com
         </a>
+
+        <div class="office-location">
+          <h3 class="office-location-title">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            Office Location
+          </h3>
+          <p class="office-address">
+            6th Floor, 2/1149/A104, Hilite Business Park, Palazhi
+            Kozhikode- 673 014,Kerala
+          </p>
+          <iframe
+            class="office-map"
+            title="Map showing Ekal Ventures office at Hilite Business Park, Palazhi, Kozhikode"
+            src="https://maps.google.com/maps?q=6th%20Floor%2C%202%2F1149%2FA104%2C%20Hilite%20Business%20Park%2C%20Palazhi%2C%20Kozhikode%2C%20673014%2C%20Kerala&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+          <a class="office-map-link"
+             href="https://www.google.com/maps/search/?api=1&query=6th%20Floor%2C%202%2F1149%2FA104%2C%20Hilite%20Business%20Park%2C%20Palazhi%2C%20Kozhikode%2C%20673014%2C%20Kerala"
+             target="_blank" rel="noopener">
+            Open office location in Google Maps
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+        </div>
 
       </div>
     </section>
